@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search internships and job opportunities on CareerHub.">
+    <title>Explore Opportunities | CareerHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/api.js" defer></script>
+    <script src="/js/opportunities.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/dashboard.html">
+            <span class="brand-mark">C</span>
+            <span>Career<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <nav class="actions" aria-label="Main navigation">
+            <a class="btn btn-secondary" href="/dashboard.html">Dashboard</a>
+            <a class="btn btn-secondary" href="/profile.html">My profile</a>
+            <a class="btn btn-secondary" href="/applications.html">My applications</a>
+            <button type="button" class="btn btn-primary" id="logout-button">
+                Log out
+            </button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">YOUR NEXT CAREER MOVE</span>
+                <h1>Explore opportunities</h1>
+                <p>Find internships and jobs that match your interests and skills.</p>
+            </div>
+        </section>
+
+        <div id="page-message"
+             class="form-message"
+             role="status"
+             aria-live="polite"
+             hidden></div>
+
+        <section class="panel" aria-labelledby="filter-heading">
+            <div class="section-heading">
+                <h2 id="filter-heading">Find the right opportunity</h2>
+                <button type="button" id="clear-filters" class="btn btn-secondary">
+                    Clear filters
+                </button>
+            </div>
+
+            <form id="filter-form">
+                <div class="toolbar">
+                    <div class="form-group">
+                        <label for="search-input">Search</label>
+                        <input
+                            type="search"
+                            id="search-input"
+                            name="search"
+                            placeholder="Role, company, or keyword"
+                            maxlength="100"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type-filter">Opportunity type</label>
+                        <select id="type-filter" name="type">
+                            <option value="">All types</option>
+                            <option value="internship">Internship</option>
+                            <option value="job">Full-time job</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location-filter">Location</label>
+                        <input
+                            type="text"
+                            id="location-filter"
+                            name="location"
+                            placeholder="e.g. Remote, Mumbai"
+                            maxlength="100"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="work-mode-filter">Work mode</label>
+                        <select id="work-mode-filter" name="workMode">
+                            <option value="">All modes</option>
+                            <option value="onsite">On-site</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="remote">Remote</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skill-filter">Required skill</label>
+                        <input
+                            type="text"
+                            id="skill-filter"
+                            name="skill"
+                            placeholder="e.g. JavaScript"
+                            maxlength="50"
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Search opportunities
+                </button>
+            </form>
+        </section>
+
+        <section style="margin-top: 28px;" aria-labelledby="results-heading">
+            <div class="section-heading">
+                <div>
+                    <h2 id="results-heading">Available opportunities</h2>
+                    <p id="results-summary">Loading opportunities...</p>
+                </div>
+            </div>
+
+            <div id="opportunity-list" class="card-grid" aria-live="polite">
+                <div class="loading">Loading opportunities...</div>
+            </div>
+
+            <div class="actions" style="justify-content: center; margin-top: 24px;">
+                <button type="button" id="previous-page" class="btn btn-secondary" disabled>
+                    Previous
+                </button>
+                <span id="page-indicator" style="align-self: center;">Page 1</span>
+                <button type="button" id="next-page" class="btn btn-secondary" disabled>
+                    Next
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CareerHub Student Placement Portal</p>
+    </footer>
+</body>
+</html>

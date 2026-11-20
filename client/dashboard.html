@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student placement dashboard">
+    <title>Student Dashboard | CareerHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/api.js" defer></script>
+    <script src="/js/dashboard.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/dashboard.html">
+            <span class="brand-mark">C</span>
+            <span>Career<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <nav class="actions" aria-label="Main navigation">
+            <a class="btn btn-secondary" href="/opportunities.html">
+                Find opportunities
+            </a>
+            <a class="btn btn-secondary" href="/profile.html">
+                My profile
+            </a>
+            <button type="button" class="btn btn-primary" id="logout-button">
+                Log out
+            </button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">STUDENT DASHBOARD</span>
+                <h1 id="welcome-heading">Welcome back!</h1>
+                <p>Manage your career profile and keep track of your applications.</p>
+            </div>
+        </section>
+
+        <div id="dashboard-message"
+             class="form-message"
+             role="status"
+             aria-live="polite"
+             hidden></div>
+
+        <section class="card-grid" aria-label="Application summary">
+            <article class="stat-card">
+                <span class="stat-label">Available opportunities</span>
+                <strong class="stat-value" id="available-count">—</strong>
+                <span class="stat-label">Open internships and jobs</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">My applications</span>
+                <strong class="stat-value" id="application-count">—</strong>
+                <span class="stat-label">Applications submitted</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">Profile completion</span>
+                <strong class="stat-value" id="profile-completion">—</strong>
+                <span class="stat-label">Based on your profile details</span>
+            </article>
+        </section>
+
+        <section class="panel" style="margin-top: 26px;">
+            <div class="section-heading">
+                <div>
+                    <h2>Recommended next steps</h2>
+                    <p>Keep your profile ready for new opportunities.</p>
+                </div>
+            </div>
+
+            <div class="two-column-layout">
+                <article>
+                    <h3>Complete your profile</h3>
+                    <p>
+                        Add your graduation year, CGPA, skills, education,
+                        and portfolio links to help reviewers assess your
+                        eligibility.
+                    </p>
+                    <a class="btn btn-primary" href="/profile.html">
+                        Update profile
+                    </a>
+                </article>
+
+                <article>
+                    <h3>Explore opportunities</h3>
+                    <p>
+                        Search internships and jobs, check eligibility
+                        requirements, and apply before the deadline.
+                    </p>
+                    <a class="btn btn-primary" href="/opportunities.html">
+                        Browse opportunities
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel" style="margin-top: 26px;">
+            <div class="section-heading">
+                <div>
+                    <h2>Recent applications</h2>
+                    <p>View the latest updates on your applications.</p>
+                </div>
+                <a href="/applications.html" class="btn btn-secondary">
+                    View all
+                </a>
+            </div>
+
+            <div id="recent-applications" aria-live="polite">
+                <div class="loading">Loading your applications...</div>
+            </div>
+        </section>
+
+        <section class="panel" style="margin-top: 26px;">
+            <div class="section-heading">
+                <div>
+                    <h2>Latest opportunities</h2>
+                    <p>Explore currently available openings.</p>
+                </div>
+                <a href="/opportunities.html" class="btn btn-secondary">
+                    View all opportunities
+                </a>
+            </div>
+
+            <div id="latest-opportunities" class="card-grid">
+                <div class="loading">Loading opportunities...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CareerHub Student Placement Portal</p>
+    </footer>
+</body>
+</html>

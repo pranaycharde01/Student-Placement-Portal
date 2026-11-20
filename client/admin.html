@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CareerHub placement administration dashboard.">
+    <title>Admin Dashboard | CareerHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/api.js" defer></script>
+    <script src="/js/admin.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/admin.html">
+            <span class="brand-mark">C</span>
+            <span>Career<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <nav class="actions" aria-label="Admin navigation">
+            <a class="btn btn-secondary" href="/dashboard.html">Student view</a>
+            <button type="button" class="btn btn-primary" id="logout-button">
+                Log out
+            </button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">PLACEMENT MANAGEMENT</span>
+                <h1>Admin dashboard</h1>
+                <p>Manage opportunities and review student applications.</p>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="create-opportunity-button">
+                + Create opportunity
+            </button>
+        </section>
+
+        <div
+            id="page-message"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+            hidden
+        ></div>
+
+        <section class="stats-grid" aria-label="Placement statistics">
+            <article class="stat-card">
+                <p class="stat-label">Registered students</p>
+                <h2 class="stat-value" id="students-count">—</h2>
+            </article>
+
+            <article class="stat-card">
+                <p class="stat-label">Active opportunities</p>
+                <h2 class="stat-value" id="active-opportunities-count">—</h2>
+            </article>
+
+            <article class="stat-card">
+                <p class="stat-label">Total applications</p>
+                <h2 class="stat-value" id="applications-count">—</h2>
+            </article>
+
+            <article class="stat-card">
+                <p class="stat-label">Shortlisted</p>
+                <h2 class="stat-value" id="shortlisted-count">—</h2>
+            </article>
+        </section>
+
+        <section class="panel" style="margin-top: 24px;" aria-labelledby="opportunities-heading">
+            <div class="section-heading">
+                <div>
+                    <h2 id="opportunities-heading">Manage opportunities</h2>
+                    <p>Create, update, publish, close, or archive opportunities.</p>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <div class="form-group">
+                    <label for="opportunity-status-filter">Filter by status</label>
+                    <select id="opportunity-status-filter">
+                        <option value="">All statuses</option>
+                        <option value="draft">Draft</option>
+                        <option value="active">Active</option>
+                        <option value="closed">Closed</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="opportunity-search">Search opportunities</label>
+                    <input
+                        type="search"
+                        id="opportunity-search"
+                        placeholder="Role or organization"
+                        maxlength="100"
+                    >
+                </div>
+            </div>
+
+            <div id="admin-opportunities-list" aria-live="polite">
+                <div class="loading">Loading opportunities...</div>
+            </div>
+        </section>
+
+        <section class="panel" style="margin-top: 24px;" aria-labelledby="applications-heading">
+            <div class="section-heading">
+                <div>
+                    <h2 id="applications-heading">Review applications</h2>
+                    <p>Filter submissions and update their review status.</p>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <div class="form-group">
+                    <label for="application-status-filter">Application status</label>
+                    <select id="application-status-filter">
+                        <option value="">All statuses</option>
+                        <option value="Submitted">Submitted</option>
+                        <option value="Under Review">Under Review</option>
+                        <option value="Shortlisted">Shortlisted</option>
+                        <option value="Rejected">Rejected</option>
+                        <option value="Selected">Selected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="application-search">Search applications</label>
+                    <input
+                        type="search"
+                        id="application-search"
+                        placeholder="Student, role, or organization"
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="application-opportunity-filter">Opportunity</label>
+                    <select id="application-opportunity-filter">
+                        <option value="">All opportunities</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="admin-applications-list" aria-live="polite">
+                <div class="loading">Loading applications...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CareerHub Student Placement Portal</p>
+    </footer>
+</body>
+</html>

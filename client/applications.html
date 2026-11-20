@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your internship and job applications on CareerHub.">
+    <title>My Applications | CareerHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/api.js" defer></script>
+    <script src="/js/applications.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/dashboard.html">
+            <span class="brand-mark">C</span>
+            <span>Career<span class="brand-accent">Hub</span></span>
+        </a>
+
+        <nav class="actions" aria-label="Main navigation">
+            <a class="btn btn-secondary" href="/dashboard.html">Dashboard</a>
+            <a class="btn btn-secondary" href="/opportunities.html">Opportunities</a>
+            <a class="btn btn-secondary" href="/profile.html">My profile</a>
+            <button type="button" class="btn btn-primary" id="logout-button">
+                Log out
+            </button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">YOUR APPLICATIONS</span>
+                <h1>Application tracker</h1>
+                <p>Track your submissions and check the latest status of each application.</p>
+            </div>
+        </section>
+
+        <div
+            id="page-message"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+            hidden
+        ></div>
+
+        <section class="stats-grid" aria-label="Application summary">
+            <article class="stat-card">
+                <p class="stat-label">Total applications</p>
+                <h2 class="stat-value" id="total-count">—</h2>
+            </article>
+
+            <article class="stat-card">
+                <p class="stat-label">Under review</p>
+                <h2 class="stat-value" id="review-count">—</h2>
+            </article>
+
+            <article class="stat-card">
+                <p class="stat-label">Shortlisted</p>
+                <h2 class="stat-value" id="shortlisted-count">—</h2>
+            </article>
+
+            <article class="stat-card">
+                <p class="stat-label">Selected</p>
+                <h2 class="stat-value" id="selected-count">—</h2>
+            </article>
+        </section>
+
+        <section class="panel" style="margin-top: 24px;" aria-labelledby="applications-heading">
+            <div class="section-heading">
+                <div>
+                    <h2 id="applications-heading">Your submissions</h2>
+                    <p>Application status is updated by the placement team.</p>
+                </div>
+
+                <a class="btn btn-primary" href="/opportunities.html">
+                    Find opportunities
+                </a>
+            </div>
+
+            <div class="toolbar">
+                <div class="form-group">
+                    <label for="status-filter">Filter by status</label>
+                    <select id="status-filter">
+                        <option value="">All statuses</option>
+                        <option value="Submitted">Submitted</option>
+                        <option value="Under Review">Under Review</option>
+                        <option value="Shortlisted">Shortlisted</option>
+                        <option value="Rejected">Rejected</option>
+                        <option value="Selected">Selected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="search-filter">Search organization or role</label>
+                    <input
+                        type="search"
+                        id="search-filter"
+                        placeholder="Search applications"
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="sort-filter">Sort by</label>
+                    <select id="sort-filter">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="applications-list" aria-live="polite">
+                <div class="loading">Loading your applications...</div>
+            </div>
+
+            <div class="empty-state" id="empty-state" hidden>
+                <h3>No applications found</h3>
+                <p>You have not applied to any matching opportunities yet.</p>
+                <a class="btn btn-primary" href="/opportunities.html">
+                    Explore opportunities
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CareerHub Student Placement Portal</p>
+    </footer>
+</body>
+</html>

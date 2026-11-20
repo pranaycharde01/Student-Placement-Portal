@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Placement and Internship Portal">
+    <title>CareerHub | Student Placement Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+    <header class="site-header">
+        <a class="brand" href="/">
+            <span class="brand-mark">C</span>
+            <span>Career<span class="brand-accent">Hub</span></span>
+        </a>
+        <span class="header-note">Your career starts here</span>
+    </header>
+
+    <main class="auth-layout">
+        <section class="welcome-panel">
+            <span class="eyebrow">STUDENT PLACEMENT & INTERNSHIPS</span>
+            <h1>Turn your potential into your next opportunity.</h1>
+            <p>
+                Discover internships and jobs, showcase your skills,
+                and track your applications in one place.
+            </p>
+
+            <div class="welcome-features">
+                <div class="feature-item">
+                    <span class="feature-icon">01</span>
+                    <div>
+                        <h2>Explore opportunities</h2>
+                        <p>Find internships and job openings.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">02</span>
+                    <div>
+                        <h2>Build your profile</h2>
+                        <p>Showcase your education, skills, and projects.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">03</span>
+                    <div>
+                        <h2>Track applications</h2>
+                        <p>Stay updated on your application status.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="welcome-footer">
+                One place to take the next step in your career.
+            </p>
+        </section>
+
+        <section class="auth-card" aria-labelledby="auth-heading">
+            <div class="auth-card-heading">
+                <span class="eyebrow">WELCOME TO CAREERHUB</span>
+                <h2 id="auth-heading">Welcome back</h2>
+                <p id="auth-description">Log in to continue to your account.</p>
+            </div>
+
+            <div class="auth-tabs" role="tablist" aria-label="Account access">
+                <button
+                    type="button"
+                    class="auth-tab active"
+                    id="login-tab"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="login-panel"
+                >Log in</button>
+
+                <button
+                    type="button"
+                    class="auth-tab"
+                    id="register-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="register-panel"
+                >Create account</button>
+            </div>
+
+            <div id="auth-message" class="form-message"
+                 role="status" aria-live="polite" hidden></div>
+
+            <div id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                <form id="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="login-email">Email address</label>
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            maxlength="254"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary auth-submit">
+                        Log in to your account
+                    </button>
+                </form>
+            </div>
+
+            <div id="register-panel" role="tabpanel"
+                 aria-labelledby="register-tab" hidden>
+                <form id="register-form" novalidate>
+                    <div class="form-group">
+                        <label for="register-name">Full name</label>
+                        <input
+                            type="text"
+                            id="register-name"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            minlength="2"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-email">Email address</label>
+                        <input
+                            type="email"
+                            id="register-email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            maxlength="254"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password">Create password</label>
+                        <input
+                            type="password"
+                            id="register-password"
+                            name="password"
+                            placeholder="At least 8 characters"
+                            autocomplete="new-password"
+                            minlength="8"
+                            maxlength="72"
+                            required
+                        >
+                        <small>Use at least 8 characters.</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary auth-submit">
+                        Create student account
+                    </button>
+                </form>
+            </div>
+
+            <p class="auth-legal">
+                Keep your login credentials private and secure.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 CareerHub Student Placement Portal</p>
+    </footer>
+</body>
+</html>
